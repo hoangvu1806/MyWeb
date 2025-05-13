@@ -1,0 +1,19 @@
+# Bỏ qua các file nén
+*.rar
+*.zip
+
+# Bỏ qua file thực thi
+*.exe
+
+# Bỏ qua file log
+*.log
+
+# Bỏ qua thư mục __pycache__ (Python bytecode)
+__pycache__/
+
+# Bỏ qua thư mục chatting
+chatting/
+
+# Bỏ qua thư mục cấu hình VSCode
+.vscode/
+
