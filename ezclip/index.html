@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Ez Clip - The ultimate tool for downloading videos and audio effortlessly. Discover high-quality downloads in multiple formats."
+        />
+        <meta
+            name="keywords"
+            content="video downloader, Ez Clip, download videos, download audio, 4K downloader"
+        />
+        <meta name="author" content="Ez Clip Team" />
+        <title>Ez Clip - Ultimate Video Downloader</title>
+        <link
+            type="image/png"
+            sizes="32x32"
+            rel="icon"
+            href="/ezclip/resources/img/favicon.ico"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            .custom-gradient {
+                background: linear-gradient(
+                    90deg,
+                    rgb(240, 8, 8) 0%,
+                    rgb(206, 122, 122) 100%
+                );
+            }
+            .hover-scale:hover {
+                transform: scale(1.05);
+                transition: transform 0.2s;
+            }
+        </style>
+    </head>
+
+    <body class="font-sans antialiased text-gray-900">
+        <!-- Header -->
+        <header class="custom-gradient text-white">
+            <div class="container mx-auto px-6 py-8">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <a href="/ezclip" class="flex items-center space-x-2">
+                            <img
+                                src="/ezclip/resources/img/EzClip.png"
+                                alt="EzClip Logo"
+                                class="h-12 w-auto"
+                            />
+                        </a>
+                    </div>
+                    <nav>
+                        <ul class="flex space-x-6">
+                            <li>
+                                <a href="#features" class="hover:text-gray-300"
+                                    >Features</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#screenshots"
+                                    class="hover:text-gray-300 smooth-scroll"
+                                    >Screenshots</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#download"
+                                    class="hover:text-gray-300 smooth-scroll"
+                                    >Download</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#feedback"
+                                    class="hover:text-gray-300 smooth-scroll"
+                                    >Send feedback</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="bg-gray-100">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h1 class="text-4xl font-extrabold text-gray-800">
+                    The Ultimate Video Downloader
+                </h1>
+                <p class="mt-4 text-lg text-gray-600">
+                    Download videos and audio effortlessly from multiple
+                    platforms.
+                </p>
+                <a
+                    href="#download"
+                    class="mt-6 inline-block bg-red-600 text-white px-6 py-3 rounded-full text-lg hover:bg-red-700 hover-scale smooth-scroll"
+                >
+                    Download v1.1.2
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="container mx-auto px-6 py-16">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
+                Features
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="p-6 bg-white shadow rounded-lg text-center hover-scale"
+                >
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        Easy to Use
+                    </h3>
+                    <p class="mt-4 text-gray-600">
+                        Simple interface for quick downloads.
+                    </p>
+                </div>
+                <div
+                    class="p-6 bg-white shadow rounded-lg text-center hover-scale"
+                >
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        High Quality
+                    </h3>
+                    <p class="mt-4 text-gray-600">
+                        Supports up to 4K video downloads.
+                    </p>
+                </div>
+                <div
+                    class="p-6 bg-white shadow rounded-lg text-center hover-scale"
+                >
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        Multiple Formats
+                    </h3>
+                    <p class="mt-4 text-gray-600">
+                        Download as MP4, MP3, and more.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots Section -->
+        <section id="screenshots" class="bg-gray-50 py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
+                    Screenshots
+                </h2>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    <img
+                        src="/ezclip/resources/img/Screenshot2.jpg"
+                        alt="Screenshot 2"
+                        class="rounded shadow hover-scale"
+                    />
+                    <img
+                        src="/ezclip/resources/img/Screenshot1.jpg"
+                        alt="Screenshot 1"
+                        class="rounded shadow hover-scale"
+                    />
+                    <img
+                        src="/ezclip/resources/img/Screenshot3.jpg"
+                        alt="Screenshot 3"
+                        class="rounded shadow hover-scale"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="custom-gradient text-white py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Get Started with EzClip</h2>
+                <p class="text-lg mb-8">
+                    Download the installer and start using Ez Clip today!
+                </p>
+                <a
+                    href="/ezclip/downloads?platform=windows"
+                    class="bg-white text-red-600 px-8 py-3 rounded-full text-lg hover:bg-gray-100 hover-scale"
+                >
+                    Download For Windows
+                </a>
+                <!-- <a
+                    href="/ezclip/downloads?platform=linux"
+                    class="bg-white text-red-600 px-8 py-3 rounded-full text-lg hover:bg-gray-100 hover-scale"
+                >
+                    Download For Linux
+                </a>
+                <a
+                    href="/ezclip/downloads?platform=mac"
+                    class="bg-white text-red-600 px-8 py-3 rounded-full text-lg hover:bg-gray-100 hover-scale"
+                >
+                    Download For Mac
+                </a> -->
+            </div>
+        </section>
+        <!-- Feedback Section -->
+        <section id="feedback" class="bg-gray-100 py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
+                    We Value Your Feedback
+                </h2>
+                <form
+                    id="feedback-form"
+                    class="max-w-xl mx-auto bg-white shadow-lg rounded-lg p-6"
+                >
+                    <div class="mb-4">
+                        <label
+                            for="name"
+                            class="block text-gray-700 font-bold mb-2"
+                        >
+                            Your Name
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                            placeholder="Enter your name"
+                            required
+                        />
+                    </div>
+                    <div class="mb-4">
+                        <label
+                            for="email"
+                            class="block text-gray-700 font-bold mb-2"
+                        >
+                            Your Email
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                            placeholder="Enter your email"
+                            required
+                        />
+                    </div>
+                    <div class="mb-4">
+                        <label
+                            for="form_message"
+                            class="block text-gray-700 font-bold mb-2"
+                        >
+                            Your Message
+                        </label>
+                        <textarea
+                            id="form_message"
+                            name="form_message"
+                            rows="4"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                            placeholder="Enter your message"
+                            required
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 hover-scale transition"
+                    >
+                        Send Feedback
+                    </button>
+                </form>
+                <div
+                    id="feedback-response"
+                    class="mt-4 text-center hidden"
+                ></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="container mx-auto px-6 text-center">
+                <p>&copy; 2024 Ez Clip. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </body>
+    <script>
+        document
+            .getElementById("feedback-form")
+            .addEventListener("submit", async function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const form = document.getElementById("feedback-form");
+                const form_message =
+                    document.getElementById("form_message").value;
+
+                const responseElement =
+                    document.getElementById("feedback-response");
+                responseElement.classList.add("hidden");
+                responseElement.innerText = "";
+
+                try {
+                    const response = await fetch("/ezclip/send-message", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ name, email, form_message }),
+                    });
+                    if (response.ok) {
+                        form.reset();
+                        responseElement.classList.remove("hidden");
+                        responseElement.classList.add("text-green-600");
+                        responseElement.innerText =
+                            "Thank you for your feedback!";
+                    } else {
+                        console.error(response);
+                        throw new Error("Failed to send feedback");
+                    }
+                } catch (error) {
+                    console.error(error);
+                    responseElement.classList.remove("hidden");
+                    responseElement.classList.add("text-red-600");
+                    responseElement.innerText =
+                        "Something went wrong. Please try again later.";
+                }
+            });
+    </script>
+</html>

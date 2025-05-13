@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>404 - Page Not Found</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            .background-image {
+                background-image: url("/Error/background.jpg");
+                background-size: cover; /* Ảnh bao phủ toàn màn hình */
+                background-position: center; /* Ảnh căn giữa */
+                background-repeat: no-repeat; /* Không lặp lại ảnh */
+            }
+        </style>
+    </head>
+    <body
+        class="background-image bg-fixed text-white min-h-screen flex flex-col justify-between relative"
+    >
+        <!-- Background Design -->
+        <!-- Main Content -->
+        <div class="z-10 text-center mt-20"></div>
+
+        <!-- Go Home Button -->
+        <div class="z-10 flex justify-center mb-10">
+            <a
+                id="GoHome"
+                href="/home"
+                class="px-6 py-3 text-lg font-medium rounded-lg border-2 border-pink-700 text-pink-700 hover:bg-pink-700 hover:text-white transition-all"
+            >
+                Go Back Home
+            </a>
+        </div>
+    </body>
+</html>

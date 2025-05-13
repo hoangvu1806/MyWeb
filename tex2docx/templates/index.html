@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Convert tex to docx" />
+        <meta name="description" content="Convert latex to word" />
+        <meta name="description" content="Convert .tex to .docx" />
+        <meta
+            name="description"
+            content="TEX to DOCX - Convert your DOCX to TEX Online for Free"
+        />
+        <link
+            type="image/png"
+            sizes="32x32"
+            rel="icon"
+            href="/tex2docx/templates/favicon.png"
+        />
+        <title>Ezdocx - Convert LaTeX to DOCX</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            /* Tùy chỉnh thanh scrollbar cho textarea */
+            textarea::-webkit-scrollbar {
+                width: 2px; /* Độ rộng của scrollbar */
+            }
+
+            /* Nền của scrollbar */
+            textarea::-webkit-scrollbar-track {
+                background: #202938; /* Màu nền tối cho track của scrollbar */
+                border-radius: 8px;
+            }
+
+            /* Thanh cuộn (scrollbar thumb) */
+            textarea::-webkit-scrollbar-thumb {
+                background-color: #4fd1c5; /* Màu xanh cho thumb */
+                border-radius: 8px;
+                border: 1px solid #202938; /* Viền tối giúp tạo cảm giác nổi cho thumb */
+            }
+
+            /* Thay đổi màu sắc khi hover vào thumb */
+            textarea::-webkit-scrollbar-thumb:hover {
+                background-color: #3894b2; /* Màu xanh đậm hơn khi hover */
+            }
+
+            /* Đối với Firefox */
+            textarea {
+                scrollbar-width: thin; /* Đặt độ rộng của scrollbar mỏng hơn */
+                scrollbar-color: #4fd1c5 #202938; /* thumb màu xanh và track màu tối */
+            }
+        </style>
+    </head>
+    <body class="bg-gray-900 font-sans text-blue-300">
+        <div class="container mx-auto p-8 max-w-4xl">
+            <h1 class="text-3xl font-bold text-center text-blue-300 mb-6">
+                Ezdocx - Convert LaTeX to DOCX
+            </h1>
+
+            <!-- Textarea for LaTeX input -->
+            <div class="mb-6">
+                <label
+                    for="latex-input"
+                    class="block text-gray-400 text-sm font-bold mb-2"
+                    >Enter LaTeX code:</label
+                >
+                <textarea
+                    id="latex-input"
+                    rows="12"
+                    class="w-full p-4 border border-gray-700 rounded-lg bg-gray-800 text-blue-300 focus:outline-none focus:border-blue-500"
+                    placeholder="Type your LaTeX code here..."
+                ></textarea>
+            </div>
+
+            <!-- File upload area -->
+            <div class="mb-6">
+                <label class="block text-gray-400 text-sm font-bold mb-2">
+                    Upload LaTeX file (.tex, .latex):
+                </label>
+
+                <div
+                    class="flex items-center border border-gray-700 rounded-lg bg-gray-800 p-4"
+                >
+                    <!-- File name and icon display -->
+                    <div
+                        id="file-display"
+                        class="flex items-center flex-grow text-blue-300"
+                    >
+                        <!-- Hidden file input and visible label as button -->
+                        <input
+                            id="file-input"
+                            type="file"
+                            accept=".tex, .latex"
+                            class="hidden"
+                        />
+                        <label
+                            for="file-input"
+                            class="ml-4 mr-4 px-4 py-2 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-600"
+                        >
+                            Choose File
+                        </label>
+                        <span
+                            id="file-icon"
+                            class="material-icons text-blue-500 mr-2 hidden"
+                            >description</span
+                        >
+                        <span id="file-name" class="text-gray-400"
+                            >No file chosen</span
+                        >
+                        <button
+                            id="delete-file"
+                            class="ml-auto px-3 py-1 bg-gray-700 text-white rounded hover:bg-gray-700 hidden"
+                        >
+                            Remove
+                        </button>
+                    </div>
+                </div>
+                <div
+                    id="drop-area"
+                    class="mt-4 p-6 border-2 border-dashed border-gray-700 rounded-lg text-center text-gray-500 bg-gray-800 cursor-pointer hover:border-blue-500"
+                >
+                    Drag and drop your file here
+                </div>
+            </div>
+
+            <!-- Convert button -->
+            <button
+                id="convert-button"
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            >
+                Convert to DOCX
+            </button>
+
+            <!-- Result message display -->
+            <div
+                id="result-message"
+                class="mt-4 text-center text-green-500 font-semibold hidden"
+            >
+                Your DOCX file is ready for download!
+            </div>
+        </div>
+        <footer id="footer" class="text-center text-gray-400 bg-gray-900 mt-8">
+            <p class="m-4">
+                &copy; 2023
+                <a
+                    href="https://hoangvu.id.vn"
+                    target="_blank"
+                    class="underline text-blue-500"
+                    >hoangvu.id.vn</a
+                >. All Rights Reserved.
+            </p>
+        </footer>
+        <script>
+            const dropArea = document.getElementById("drop-area");
+            const fileInput = document.getElementById("file-input");
+            const latexInput = document.getElementById("latex-input");
+            const convertButton = document.getElementById("convert-button");
+            const resultMessage = document.getElementById("result-message");
+            const fileNameLabel = document.getElementById("file-name");
+            const deleteFileButton = document.getElementById("delete-file");
+
+            dropArea.addEventListener("dragover", (e) => {
+                e.preventDefault();
+                dropArea.classList.add("border-blue-500", "bg-gray-700");
+            });
+
+            dropArea.addEventListener("dragleave", () => {
+                dropArea.classList.remove("border-blue-500", "bg-gray-700");
+            });
+
+            dropArea.addEventListener("drop", (e) => {
+                e.preventDefault();
+                dropArea.classList.remove("border-blue-500", "bg-gray-700");
+                const file = e.dataTransfer.files[0];
+                fileInput.files = e.dataTransfer.files;
+                fileNameLabel.textContent = file.name;
+                deleteFileButton.classList.remove("hidden");
+            });
+
+            fileInput.addEventListener("change", () => {
+                if (fileInput.files.length > 0) {
+                    fileNameLabel.textContent = fileInput.files[0].name;
+                    deleteFileButton.classList.remove("hidden");
+                } else {
+                    fileNameLabel.textContent = "No file chosen";
+                    deleteFileButton.classList.add("hidden");
+                }
+            });
+
+            deleteFileButton.addEventListener("click", () => {
+                fileInput.value = "";
+                fileNameLabel.textContent = "No file chosen";
+                deleteFileButton.classList.add("hidden");
+            });
+
+            convertButton.addEventListener("click", async () => {
+                resultMessage.classList.add("hidden");
+
+                const formData = new FormData();
+                if (fileInput.files.length > 0) {
+                    formData.append("file", fileInput.files[0]);
+                    latexInput.disabled = true;
+                } else if (latexInput.value.trim()) {
+                    formData.append("latex_text", latexInput.value);
+                    latexInput.disabled = true;
+                } else {
+                    alert("Please enter LaTeX code or upload a file!");
+                    latexInput.disabled = false;
+                    return;
+                }
+
+                const response = await fetch("tex2docx/convert", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement("a");
+                    link.href = url;
+                    link.download = "output.docx";
+                    document.body.appendChild(link);
+                    link.click();
+                    link.remove();
+                    resultMessage.classList.remove("hidden");
+                } else {
+                    alert("An error occurred during conversion.");
+                }
+            });
+        </script>
+    </body>
+</html>

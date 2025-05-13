@@ -1,0 +1,43 @@
+/* Tùy chỉnh giao diện cho sidebar và main content */
+.sidebar {
+    height: 100vh;
+    padding: 10px;
+}
+
+.main-content {
+    height: 100vh;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.plot-area,
+.loss-plot,
+.regression-plot {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+}
+
+.console-area {
+    height: 310px;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-y: auto;
+    font-family: monospace;
+}
+
+/* Nút bấm và input group cho giao diện tinh tế hơn */
+.btn {
+    font-weight: bold;
+}
+
+.feature-buttons .btn-outline-light {
+    border: 1px solid white;
+}
+
+.btn-danger {
+    font-size: 1.2rem;
+}

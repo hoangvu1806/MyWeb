@@ -1,0 +1,217 @@
+.workspace {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #262f3d;
+}
+
+.grid {
+    position: absolute;
+    width: 10000px;
+    height: 6000px;
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+        );
+    background-size: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    background-color: #4299e1;
+    color: white;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+/* Float island for zoom slider */
+.zoom-control {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.422);
+    padding: 7px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 175px;
+    color: white;
+}
+
+.zoom-slider {
+    width: 100px;
+}
+
+.zoom-value {
+    font-weight: bold;
+}
+
+#buildTree {
+    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+    --border-width: 0.125em;
+    --curve-size: 0.5em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: #afffff;
+    color: var(--color);
+    cursor: pointer;
+    /* use position: relative; so that BG is only for #buildTree */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: 0.5em 1.5em;
+    font-size: 17px;
+    border: 0;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+    clip-path: polygon(
+        /* Top-left */ 0% var(--curve-size),
+        var(--curve-size) 0,
+        /* top-right */ 100% 0,
+        100% calc(100% - var(--curve-size)),
+        /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+        /* bottom-right 2 */ 0 100%
+    );
+    transition: color 250ms;
+}
+
+#buildTree::after,
+#buildTree::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+#buildTree::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+}
+
+@keyframes move-bg7234 {
+    0% {
+        background-position: 31% 0%;
+    }
+
+    50% {
+        background-position: 70% 100%;
+    }
+
+    100% {
+        background-position: 31% 0%;
+    }
+}
+
+#buildTree::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+        /* Top-left */ var(--border-width)
+            calc(var(--curve-size) + var(--border-width) * 0.5),
+        calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+        /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+        calc(100% - var(--border-width))
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+        /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+            calc(100% - var(--border-width)),
+        /* bottom-right 2 */ var(--border-width)
+            calc(100% - var(--border-width))
+    );
+    transition: clip-path 500ms;
+}
+
+#buildTree:where(:hover, :focus)::after {
+    clip-path: polygon(
+        /* Top-left */ calc(100% - var(--border-width))
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+        calc(100% - var(--border-width)) var(--border-width),
+        /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+        calc(100% - var(--border-width))
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+        /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+            calc(100% - var(--border-width)),
+        /* bottom-right 2 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+            calc(100% - var(--border-width))
+    );
+    transition: 200ms;
+}
+
+#buildTree:where(:hover, :focus) {
+    color: #fff;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-color: transparent;
+    transition: right 0.5s ease, opacity 0.5s ease, border-color 0.5s ease;
+    z-index: 1000;
+    opacity: 0;
+}
+
+.notification.show {
+    right: 15px;
+    opacity: 1;
+}
+
+.notification.success {
+    border-color: #38a148; /* Màu xanh lá */
+}
+
+.notification.error {
+    border-color: #e53e3e;
+}
+
+.notification.warning {
+    border-color: #ca962e;
+}
+
+.results {
+    max-width: 205px;
+    height: 95px;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #202938;
+    display: none;
+    font-size: 11px;
+    overflow: hidden;
+}
+
+.results:not(.hidden) {
+    display: block;
+}
+
+.results .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+}

@@ -1,0 +1,131 @@
+anaconda-anon-usage @ file:///C:/b/abs_c3w_h1zzjg/croot/anaconda-anon-usage_1710965204622/work
+annotated-types==0.7.0
+anyio==4.6.2.post1
+archspec @ file:///croot/archspec_1709217642129/work
+asttokens==2.4.0
+Authlib==1.3.2
+backcall==0.2.0
+beautifulsoup4==4.12.3
+black==24.8.0
+blinker==1.8.2
+boltons @ file:///C:/ci_311/boltons_1677729932371/work
+Brotli @ file:///C:/ci_311/brotli-split_1676435766766/work
+bs4==0.0.2
+certifi @ file:///C:/b/abs_35d7n66oz9/croot/certifi_1707229248467/work/certifi
+cffi @ file:///C:/b/abs_924gv1kxzj/croot/cffi_1700254355075/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+click==8.1.7
+colorama==0.4.6
+comm==0.1.4
+conda @ file:///C:/b/abs_1e6dlkntna/croot/conda_1710772093015/work
+conda-content-trust @ file:///C:/b/abs_e3bcpyv7sw/croot/conda-content-trust_1693490654398/work
+conda-libmamba-solver @ file:///croot/conda-libmamba-solver_1706733287605/work/src
+conda-package-handling @ file:///C:/b/abs_b9wp3lr1gn/croot/conda-package-handling_1691008700066/work
+conda_package_streaming @ file:///C:/b/abs_6c28n38aaj/croot/conda-package-streaming_1690988019210/work
+contourpy==1.3.0
+crypto==1.4.1
+cryptography @ file:///C:/b/abs_f5n93r0tun/croot/cryptography_1710350404202/work
+cycler==0.12.1
+debugpy==1.7.0
+decorator==5.1.1
+diffusers==0.29.2
+distro @ file:///C:/b/abs_a3uni_yez3/croot/distro_1701455052240/work
+executing==1.2.0
+fastapi==0.115.4
+filelock==3.15.4
+Flask==3.0.3
+fonttools==4.54.1
+fsspec==2024.6.1
+graphviz==0.20.3
+huggingface-hub==0.24.1
+idna @ file:///C:/ci_311/idna_1676424932545/work
+importlib_metadata==8.1.0
+ipykernel==6.25.2
+ipython==8.15.0
+ipywidgets==8.1.5
+itsdangerous==2.2.0
+jedi==0.19.0
+Jinja2==3.1.4
+joblib==1.4.2
+jsonpatch @ file:///C:/b/abs_d3zr1enxou/croot/jsonpatch_1710807549298/work
+jsonpickle==4.0.0
+jsonpointer==2.1
+jupyter_client==8.3.1
+jupyter_core==5.3.1
+jupyterlab_widgets==3.0.13
+kiwisolver==1.4.7
+libmambapy @ file:///C:/b/abs_7dmjutgtwb/croot/mamba-split_1712091963973/work/libmambapy
+lxml==5.3.0
+MarkupSafe==3.0.1
+matplotlib==3.9.2
+matplotlib-inline==0.1.6
+menuinst @ file:///C:/b/abs_099kybla52/croot/menuinst_1706732987063/work
+mpmath==1.3.0
+mutagen==1.47.0
+mypy-extensions==1.0.0
+Naked==0.1.32
+nest-asyncio==1.5.7
+networks==0.3.7
+networkx==3.4.2
+numpy==2.1.1
+packaging @ file:///C:/b/abs_cc1h2xfosn/croot/packaging_1710807447479/work
+pandas==2.2.2
+parso==0.8.3
+pathspec==0.12.1
+pickleshare==0.7.5
+pillow==10.4.0
+platformdirs==3.10.0
+pluggy @ file:///C:/ci_311/pluggy_1676422178143/work
+prompt_toolkit==3.0.48
+psutil==5.9.5
+pure-eval==0.2.2
+py-vncorenlp==0.1.4
+pycosat @ file:///C:/b/abs_31zywn1be3/croot/pycosat_1696537126223/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pycryptodome==3.21.0
+pycryptodomex==3.21.0
+pydantic==2.9.2
+pydantic_core==2.23.4
+pygame==2.6.1
+Pygments==2.16.1
+pyjnius==1.6.1
+pyparsing==3.1.4
+PySocks @ file:///C:/ci_311/pysocks_1676425991111/work
+python-dateutil==2.9.0.post0
+pytz==2024.1
+pywin32==306
+PyYAML==6.0.1
+pyzmq==25.1.1
+rarfile==4.2
+regex==2024.5.15
+requests==2.32.3
+ruamel.yaml @ file:///C:/ci_311/ruamel.yaml_1676439214109/work
+safetensors==0.4.3
+scikit-learn==1.5.2
+scipy==1.14.1
+seaborn==0.13.2
+shellescape==3.8.1
+six==1.16.0
+sniffio==1.3.1
+soupsieve==2.6
+stack-data==0.6.2
+starlette==0.41.2
+sympy==1.13.3
+threadpoolctl==3.5.0
+tokenizers==0.19.1
+tornado==6.3.3
+tqdm @ file:///C:/b/abs_f76j9hg7pv/croot/tqdm_1679561871187/work
+traitlets==5.9.0
+transformers==4.43.1
+truststore @ file:///C:/b/abs_55z7b3r045/croot/truststore_1695245455435/work
+typing_extensions==4.12.2
+tzdata==2024.1
+urllib3 @ file:///C:/b/abs_4etpfrkumr/croot/urllib3_1707770616184/work
+wcwidth==0.2.6
+websockets==13.1
+Werkzeug==3.0.4
+widgetsnbextension==4.0.13
+win-inet-pton @ file:///C:/ci_311/win_inet_pton_1676425458225/work
+yt-dlp==2024.9.27
+zipp==3.19.2
+zstandard==0.19.0

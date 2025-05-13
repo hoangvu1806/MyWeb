@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="Visualize AI training process with Linear Regression"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../home/images/favicon.ico"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <title>Linear Regression Interface</title>
+    </head>
+    <body class="bg-gray-900 text-white">
+        <div class="flex h-screen w-full">
+            <aside class="w-1/5 bg-gray-800 p-5 flex flex-col space-y-4">
+                <h1 class="text-4xl text-blue-300 font-bold">
+                    <a href="/home">VUX</a>
+                </h1>
+                <input
+                    type="file"
+                    class="bg-white text-black p-2 rounded"
+                    placeholder="Choose your CSV file"
+                />
+                <input
+                    type="text"
+                    class="bg-white text-black p-2 rounded"
+                    placeholder="Choose target column"
+                />
+                <hr class="border-gray-600" />
+                <label>Learning rate</label>
+                <input
+                    type="text"
+                    class="bg-white text-black p-2 rounded"
+                    value="0.03"
+                />
+                <label>Epochs</label>
+                <input
+                    type="text"
+                    class="bg-white text-black p-2 rounded"
+                    value="100"
+                />
+                <hr class="border-gray-600" />
+                <input
+                    type="text"
+                    class="bg-white text-black p-2 rounded"
+                    placeholder="Feature 1"
+                />
+                <input
+                    type="text"
+                    class="bg-white text-black p-2 rounded"
+                    placeholder="Feature 2"
+                />
+                <input
+                    type="text"
+                    class="bg-white text-black p-2 rounded"
+                    placeholder="Feature 3"
+                />
+                <input
+                    type="text"
+                    class="bg-white text-black p-2 rounded"
+                    placeholder="Feature 4"
+                />
+                <button class="bg-red-500 text-white p-2 rounded">
+                    Training
+                </button>
+            </aside>
+
+            <main class="w-4/5 p-5 space-y-4">
+                <div class="grid grid-cols-4 gap-4">
+                    <div
+                        class="bg-gray-700 h-52 flex items-center justify-center text-black"
+                    >
+                        Plot 1
+                    </div>
+                    <div
+                        class="bg-gray-700 h-52 flex items-center justify-center text-black"
+                    >
+                        Plot 2
+                    </div>
+                    <div
+                        class="bg-gray-700 h-52 flex items-center justify-center text-black"
+                    >
+                        Plot 3
+                    </div>
+                    <div
+                        class="bg-gray-700 h-52 flex items-center justify-center text-black"
+                    >
+                        Plot 4
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-700 h-56 p-4">Console Area</div>
+                    <div class="bg-gray-700 h-56 p-4">Loss Plot</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-700 h-56 p-4">
+                        Some buttons for fine tune
+                    </div>
+                    <div class="bg-gray-700 h-56 p-4">
+                        Linear Regression Plot following feature A and target
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <button class="bg-gray-600 text-white p-2 rounded">
+                        Choose feature A
+                    </button>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

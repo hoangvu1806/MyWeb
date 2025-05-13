@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Decision Tree</title>
+        <link
+            type="image/png"
+            sizes="32x32"
+            rel="icon"
+            href="/decision-tree/templates/img/favicon.png"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/decision-tree/templates/css/styles.css" />
+        <link rel="stylesheet" href="/decision-tree/templates/css/tree.css" />
+    </head>
+    <body class="bg-gray-900 text-white">
+        <div class="flex h-screen w-full">
+            <aside class="w-1/6 bg-gray-800 p-5 flex flex-col space-y-4">
+                <h1 class="text-4xl text-blue-300 font-bold title">
+                    <a href="/home">V&T</a>
+                </h1>
+                <input
+                    id="csvFile"
+                    type="file"
+                    class="bg-gray-900 text-gray-200 p-2 rounded"
+                    accept=".csv, .json"
+                    placeholder="Choose your CSV file"
+                    required
+                />
+                <select
+                    class="bg-gray-900 text-gray-200 p-2 rounded"
+                    name=""
+                    id="targetColumn"
+                >
+                    <option value="" disabled selected>Select a column</option>
+                </select>
+                <input
+                    id="dropColumn"
+                    type="text"
+                    class="bg-gray-900 text-gray-200 p-2 rounded"
+                    placeholder="Choose drop column"
+                />
+                <hr class="border-gray-600" />
+                <label class="mt-2">Max Depth</label>
+                <input
+                    id="maxDepth"
+                    type="text"
+                    class="bg-gray-900 text-gray-200 p-2 rounded"
+                    value="5"
+                />
+                <label class="mt-2">Min Split</label>
+                <input
+                    id="minSplit"
+                    type="text"
+                    class="bg-gray-900 text-gray-200 p-2 rounded"
+                    value="2"
+                />
+                <label class="mt-2">Criterion</label>
+                <select
+                    class="bg-gray-900 text-gray-200 p-2 rounded"
+                    name=""
+                    id="criterion"
+                >
+                    <option value="gini">Gini</option>
+                    <option value="entropy">Entropy</option>
+                </select>
+                <hr class="border-gray-600" />
+                <button
+                    id="buildTree"
+                    class="bg-red-500 text-white p-2 rounded"
+                >
+                    Build Tree
+                </button>
+                <div id="results" class="results hidden">
+                </div>
+            </aside>
+            <main class="w-5/6 h-full p-2 br-4">
+                <div class="workspace br-4 rounded-md" id="workspace">
+                    <div class="grid" id="gridContainer">
+                        <div class="tree-container" id="tree">
+                            <a
+                                href="https://www.youtube.com/watch?v=QB7ACr7pUuE"
+                                >Your tree will show here</a
+                            >
+                        </div>
+                    </div>
+                    <!-- Zoom control island -->
+                    <div class="zoom-control" id="zoomControl">
+                        <input
+                            type="range"
+                            id="zoomSlider"
+                            class="zoom-slider ml-3"
+                            min="20"
+                            max="300"
+                            value="100"
+                        />
+                        <span id="zoomValue" class="zoom-value mr-3">100%</span>
+                    </div>
+                </div>
+                <div id="notification" class="notification hidden"></div>
+            </main>
+
+            <script src="/decision-tree/templates/js/animations.js"></script>
+            <script src="/decision-tree/templates/js/buildTree.js"></script>
+        </div>
+    </body>
+</html>
